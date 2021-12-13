@@ -5,16 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PipePipe } from './pipe/pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PostComponent
+    PostComponent,
+    PipePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  exports: [
+    HttpClientModule,
+    PipePipe
   ],
   providers: [],
   bootstrap: [AppComponent]
